@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createServer, Socket } from 'net';
-import { join } from 'path';
-import { promises as fs } from 'fs';
+import path from 'path';
+import fs from 'fs';
 
 import SSH2Promise from 'ssh2-promise';
 import ts from 'typescript';
@@ -142,8 +142,8 @@ export default async function watchBuildTransferRun(options: Options) {
       const keyFiles = ['id_rsa', 'id_dsa', 'id_ecdsa'];
       for (const i in keyFiles) {
         try {
-          const file = join(process.env.HOME, '.ssh', keyFiles[i]);
-          options.remote.connect.privateKey = await fs.readFile(file);
+          const file = path.join(process.env.HOME, '.ssh', keyFiles[i]);
+          options.remote.connect.privateKey = await fs.promises.readFile(file);
           console.log('Found and loaded private key file:', file);
           break;
         } catch (e) {}
