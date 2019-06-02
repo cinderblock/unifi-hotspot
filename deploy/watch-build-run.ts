@@ -159,10 +159,8 @@ export default async function watchBuildTransferRun(options: Options) {
   // Create a proxy so that the ui running locally can talk to the daemon as if it were also running locally
   makeProxyServer(options.remote.connect.host, 8000);
 
-  // For later maybe
+  // Set to a nice low value (250ms) because why not
   options.remote.connect.reconnectDelay = options.remote.connect.reconnectDelay || 250;
-  // Don't try to support reconnect for now. TODO: Support reconnect.
-  options.remote.connect.reconnect = false;
 
   // options.remote.connect.debug = msg => debug.info('SSH DEBUG:', msg);
 
