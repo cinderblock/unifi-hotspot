@@ -4,6 +4,13 @@ Skeleton for a sever/client JavaScript pair.
 
 ## Development
 
+The development environment is intended to be a first class and modern.
+
+- Reload on save for client ui and server daemon running locally or remotely.
+- Full color easy console logging.
+- Easy debugging with source maps everywhere.
+- Dependency changes automatically maintained with git hooks.
+
 ### Prerequisites
 
 [**Node 10+**](https://nodejs.org/en/download) must be installed on your development system.
