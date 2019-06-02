@@ -255,7 +255,7 @@ WantedBy=multi-user.target
     );
 
     const origCreateProgram = host.createProgram;
-    host.createProgram = (rootNames: ReadonlyArray<string>, options, host, oldProgram) => {
+    host.createProgram = (rootNames, options, host, oldProgram) => {
       debug.cyan('🔨 Starting new compilation');
       markBuilding();
       // Might be nice to wait for it to finish... Not sure how.
