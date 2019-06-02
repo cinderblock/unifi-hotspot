@@ -35,14 +35,13 @@ npm run setup
 To run this full system, **two** separate programs need to be run.
 One for the web **UI** and one to actually do something persistent, the **daemon**.
 
-Most commands are intended to be run **on your development machine** and **not** directly on the remote system.
+### Remote Execution
 
-#### Local Daemon Config
+In order to run the daemon on remote systems, the deploy config needs to be setup.
+Copy or move `deploy/config.sample.ts` to `deploy/config.ts` and edit as desired.
 
-If you'd like to run the daemon locally, there are a couple steps that need to be taken:
-
-1. Copy `daemon/config.sample.ts` to `daemon/config.ts`.
-2. Edit as desired. Directories must exist.
+Configs for daemons often need to be slightly different than when running locally.
+The deploy script will replace `daemon/config.ts` with `daemon/config.remote.ts` on the remote system before execution.
 
 ### Suggested Environment
 
