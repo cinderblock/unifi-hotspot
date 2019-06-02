@@ -123,7 +123,8 @@ export default async function watchBuildTransferRun(options: Options) {
 
   if (!isDirectoryString(moduleDir)) throw new Error('Invalid module directory specified for moduleDir');
 
-  if (!isDirectoryString(options.remote.directory)) throw new Error('Invalid remote directory specifier string');
+  if (options.remote.directory === undefined || !isDirectoryString(options.remote.directory))
+    throw new Error('Invalid remote directory specifier string');
 
   const configPath = ts.findConfigFile(localModuleDir, ts.sys.fileExists);
   if (!configPath) throw new Error('Could not find a valid tsconfig.json.');
