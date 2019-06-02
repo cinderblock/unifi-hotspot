@@ -3,8 +3,8 @@ import { createServer, Socket } from 'net';
 import { join } from 'path';
 import { promises as fs } from 'fs';
 
-import SSH2Promise = require('ssh2-promise');
-import ts = require('typescript');
+import SSH2Promise from 'ssh2-promise';
+import ts from 'typescript';
 import { Observable, combineLatest, merge } from 'rxjs';
 import { debounceTime, map, filter, mergeMap } from 'rxjs/operators';
 import { ClientChannel, ExecOptions } from 'ssh2';
