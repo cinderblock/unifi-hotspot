@@ -123,6 +123,8 @@ export default async function watchBuildTransferRun(options: Options) {
 
   if (!isDirectoryString(moduleDir)) throw new Error('Invalid module directory specified for moduleDir');
 
+  if (!options.remote.connect.host) throw new Error('Must specify remote host');
+
   if (options.remote.directory === undefined || !isDirectoryString(options.remote.directory))
     throw new Error('Invalid remote directory specifier string');
 
